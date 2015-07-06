@@ -45,7 +45,7 @@ namespace <#=nameSpace#>
           {
               switch(correspondingFieldID)
               {
-              <#=string.Join("\n\t\t\t\t\t", m.GetGroupsByTag().Select(gbt => string.Format("case QuickFix.Fields.Tags.{0}: return new {1}.{2}();", gbt.Item1, nameSpace, gbt.Item2)).ToArray())#>
+              <#=string.Join("\n\t\t\t\t\t", m.GetGroupsByTag().Select(gbt => string.Format("case {0}.Fields.Tags.{1}: return new {2}.{3}();", nameSpace, gbt.Item1, nameSpace, gbt.Item2)).ToArray())#>
               }
           }
 <# }#>
